@@ -5,122 +5,142 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DzungTLab's Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <link rel="" href="">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Liên kết đến file CSS -->
+    <link rel="stylesheet" href="./css/main.css">
 </head>
 
 <body class="antialiased">
     <header class="header-main">
         <nav class="nav-container">
             <a href="#" class="logo font-code">DzungTLab</a>
-            <ul class="nav-list">
-                <li><a href="#intro" class="nav-item">Introduction</a></li>
-                <li><a href="#projects" class="nav-item">Projects</a></li>
-                <li><a href="#about" class="nav-item">About</a></li>
-                <li><a href="#contact" class="nav-item">Contact</a></li>
-            </ul>
+            
+            <div style="display: flex; align-items: center; gap: 1rem;">
+                <!-- Menu -->
+                <ul class="nav-list">
+                    <li><a href="#intro" class="nav-item">Introduction</a></li>
+                    <li><a href="#projects" class="nav-item">Projects</a></li>
+                    <li><a href="#about" class="nav-item">About</a></li>
+                    <li><a href="#contact" class="nav-item">Contact</a></li>
+                </ul>
+
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Dark Mode">
+                    <!-- Icon Sun (Hiện khi dark mode) -->
+                    <svg id="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: none;">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                    <!-- Icon Moon (Hiện khi light mode) -->
+                    <svg id="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                </button>
+            </div>
         </nav>
     </header>
 
     <main class="main-content">
-        <section id="intro" class="hero-section animate-fade-in-down">
-            <h1 class="hero-title">Welcome, my name is <span class="text-red font-code">DzungTLab</span></h1>
-            <p class="hero-subtitle">Primarily, a <span class="text-green font-code">developer</span> learning to become
-                a <span class="text-blue font-code">software engineer</span>.</p>
-            <a href="#projects" class="hero-button">My Projects</a>
+        <!-- Intro Section -->
+        <section id="intro" class="hero-section reveal">
+            <h1 class="hero-title">Welcome, I am <span class="text-red font-code">DzungTLab</span></h1>
+            <p class="hero-subtitle">
+                I am a <span class="text-green font-code">developer</span> learning to become a <br>
+                <span id="typewriter" class="text-blue font-code font-bold"></span><span class="cursor">|</span>
+            </p>
+            <a href="#projects" class="hero-button">View My Work</a>
         </section>
 
-        <section id="projects" class="projects-section">
+        <!-- Projects Section -->
+        <section id="projects" class="projects-section reveal">
             <h2 class="section-title">My Projects</h2>
             <div class="projects-grid">
+                <!-- Project 1 -->
                 <div class="project-card">
-                    <img src="images/Portfolio_PNG.png" alt="Project 1 Image" class="project-image">
-                    <h3 class="project-title">Portfolio</h3>
-                    <p class="project-description">My debut project, designed to showcase my development journey and
-                        technical skillset</p>
-                    <a href="https://dungtlab.github.io/DzungTLab_Portfolio/" class="project-link">View Details</a>
+                    <img src="./assets/images/image_webPortfolio.png" alt="Portfolio Image" class="project-image">
+                    <h3 class="project-title">Portfolio Website</h3>
+                    <p class="project-description">My debut project, designed to showcase my development journey and technical skillset using HTML, CSS, and JS.</p>
+                    <a href="https://dungtlab.github.io/DzungTLab_Portfolio/" target="_blank" class="project-link">Live Demo</a>
                 </div>
+                <!-- Project 2 -->
                 <div class="project-card">
-                    <img src="https://placehold.co/600x400/2d3748/c9d1d9?text=Project+2" alt="Project 2 Image"
-                        class="project-image">
-                    <h3 class="project-title">Work in Progress</h3>
-                    <p class="project-description">Currently researching and developing the next application. Stay tuned
-                        for updates.</p>
-                    <a href="#" class="project-link">View Details</a>
+                    <img src="https://placehold.co/600x400/1f2937/4ade80?text=App+In+Progress" alt="Project 2 Image" class="project-image">
+                    <h3 class="project-title">Next Big Thing</h3>
+                    <p class="project-description">Currently researching AI integration for everyday tasks. Developing utilizing Python and TensorFlow.</p>
+                    <a href="#" class="project-link">Details Soon</a>
                 </div>
+                <!-- Project 3 -->
                 <div class="project-card">
-                    <img src="https://placehold.co/600x400/2d3748/c9d1d9?text=Project+3" alt="Project 3 Image"
-                        class="project-image">
-                    <h3 class="project-title">Work in Progress</h3>
-                    <p class="project-description">Currently researching and developing the next application. Stay tuned
-                        for updates.</p>
-                    <a href="#" class="project-link">View Details</a>
+                    <img src="https://placehold.co/600x400/1f2937/60a5fa?text=Game+Dev" alt="Project 3 Image" class="project-image">
+                    <h3 class="project-title">2D Game Engine</h3>
+                    <p class="project-description">A simple C++ game engine aimed at learning memory management and rendering pipelines.</p>
+                    <a href="#" class="project-link">GitHub Repo</a>
                 </div>
             </div>
         </section>
 
-        <section id="about" class="about-section">
+        <!-- About Section -->
+        <section id="about" class="about-section reveal">
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="profile-image-wrapper">
-                    <img src="images\Avt.jpg" alt="Your Profile Picture" class="profile-image">
+                    <img src="./assets/images/Avt.jpg" onerror="this.src='https://placehold.co/400x400/ef4444/ffffff?text=Dzung'" alt="DzungTLab Profile" class="profile-image">
                 </div>
                 <div class="about-text">
-                    <p class="mb-4">Hello! I'm <span class="text-red font-code font-semibold">DzungTLab</span>. I'm a
-                        passionate Software Engineering student with about
-                        <span class="text-yellow font-code">[4]</span> years of hands-on experience in <span
-                            class="text-green font-code">programming and software development</span>. My interests lie
-                        at the intersection of <span class="text-blue font-code">[Artificial Intelligence,
-                            Cybersecurity, and Application/Game Development]</span>.
+                    <p>
+                        Hello! I'm <span class="text-red font-code font-semibold">DzungTLab</span>. I'm a passionate Software Engineering student with about 
+                        <span class="text-yellow font-code">[2]</span> years of hands-on experience in 
+                        <span class="text-green font-code">programming</span>.
                     </p>
-                    <p class="mb-4">My skills include: <span class="text-purple">[C/C++]</span>, <span
-                            class="text-purple">[Java]</span>, <span class="text-purple">[Python]</span>, and <span
-                            class="text-purple">[Full Stack Web Development]</span>. I'm always looking for new
-                        challenges and
-                        opportunities to grow.</p>
-                    <p>In my free time, I enjoy <span class="text-red font-code">[Personal hobbies, e.g., reading,
-                            gaming, hiking]</span>.</p>
+                    <p>
+                        My interests lie at the intersection of <span class="text-blue font-code">Artificial Intelligence, Cybersecurity, and Game Development</span>.
+                        I love solving complex problems and turning coffee into code.
+                    </p>
+                    <p>
+                        <strong>Tech Stack:</strong> <span class="text-purple">C/C++, Java, Python, HTML/CSS/JS</span>.
+                    </p>
+                    <p>In my free time, I enjoy gaming and researching new tech trends.</p>
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="contact-section">
+        <!-- Contact Section -->
+        <section id="contact" class="contact-section reveal">
             <h2 class="section-title">Contact Me</h2>
             <div class="contact-intro">
-                <p>Have an idea or need collaboration? Don't hesitate to reach out to me through the following channels:
-                </p>
+                <p>Have an idea or need collaboration? Don't hesitate to reach out to me.</p>
             </div>
             <ul class="contact-list">
                 <li>
-                    <a class="contact-item-link">
+                    <a href="mailto:Dungletiense@gmail.com" class="contact-item-link">
                         <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
                             <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z"></path>
                             <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z"></path>
                         </svg>
-                        Dungletiense@gmail.com
+                        Email Me
                     </a>
                 </li>
                 <li>
-                    <a href="https://www.linkedin.com/in/d%C5%A9ng-l%C3%AA-941050380/" target="_blank"
-                        rel="noopener noreferrer" class="contact-item-link">
+                    <a href="https://www.linkedin.com/in/d%C5%A9ng-l%C3%AA-941050380/" target="_blank" class="contact-item-link">
                         <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M16.3 0H3.7C1.65 0 0 1.65 0 3.7v12.6C0 18.35 1.65 20 3.7 20h12.6c2.05 0 3.7-1.65 3.7-3.7V3.7C20 1.65 18.35 0 16.3 0zM6 17H3V7h3v10zM4.5 5.5A1.5 1.5 0 116 4a1.5 1.5 0 01-1.5 1.5zM17 17h-3v-5c0-1.2-.8-2-2-2s-2 .8-2 2v5H7V7h3v1.5c.7-1.2 2-2 3-2 2.5 0 4 1.8 4 4.5V17z"
-                                clip-rule="evenodd"></path>
+                            <path fill-rule="evenodd" d="M16.3 0H3.7C1.65 0 0 1.65 0 3.7v12.6C0 18.35 1.65 20 3.7 20h12.6c2.05 0 3.7-1.65 3.7-3.7V3.7C20 1.65 18.35 0 16.3 0zM6 17H3V7h3v10zM4.5 5.5A1.5 1.5 0 116 4a1.5 1.5 0 01-1.5 1.5zM17 17h-3v-5c0-1.2-.8-2-2-2s-2 .8-2 2v5H7V7h3v1.5c.7-1.2 2-2 3-2 2.5 0 4 1.8 4 4.5V17z" clip-rule="evenodd"></path>
                         </svg>
-                        LinkedIn/DzungTLab
+                        LinkedIn
                     </a>
                 </li>
                 <li>
-                    <a href="https://github.com/DungTLab" target="_blank" rel="noopener noreferrer"
-                        class="contact-item-link">
+                    <a href="https://github.com/DungTLab" target="_blank" class="contact-item-link">
                         <svg class="contact-icon" fill="currentColor" viewBox="0 0 20 20">
-                            <path fill-rule="evenodd"
-                                d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.867-.013-1.7V15.7c-2.782.604-3.369-1.341-3.369-1.341-.454-1.157-1.107-1.464-1.107-1.464-.907-.62.068-.608.068-.608 1.004.07 1.532 1.03 1.532 1.03.89 1.529 2.344 1.088 2.91.83.092-.647.35-1.088.636-1.338C7.24 14.07 4.316 12.983 4.316 8.35c0-1.16.413-2.098 1.092-2.842-.11-.27-.474-1.343.104-2.808 0 0 .894-.285 2.923 1.084A10.4 10.4 0 0110 4.095c.915-.022 1.83-.008 2.7.275 2.022-1.369 2.916-1.084 2.916-1.084.588 1.465.225 2.538.114 2.808.682.744 1.094 1.682 1.094 2.842 0 4.646-2.927 5.72-5.717 6.004.358.308.678.917.678 1.85 0 1.338-.012 2.419-.012 2.745 0 .269.18.579.688.482C17.143 18.196 20 14.444 20 10.017 20 4.484 15.523 0 10 0z"
-                                clip-rule="evenodd"></path>
+                            <path fill-rule="evenodd" d="M10 0C4.477 0 0 4.484 0 10.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.867-.013-1.7V15.7c-2.782.604-3.369-1.341-3.369-1.341-.454-1.157-1.107-1.464-1.107-1.464-.907-.62.068-.608.068-.608 1.004.07 1.532 1.03 1.532 1.03.89 1.529 2.344 1.088 2.91.83.092-.647.35-1.088.636-1.338C7.24 14.07 4.316 12.983 4.316 8.35c0-1.16.413-2.098 1.092-2.842-.11-.27-.474-1.343.104-2.808 0 0 .894-.285 2.923 1.084A10.4 10.4 0 0110 4.095c.915-.022 1.83-.008 2.7.275 2.022-1.369 2.916-1.084 2.916-1.084.588 1.465.225 2.538.114 2.808.682.744 1.094 1.682 1.094 2.842 0 4.646-2.927 5.72-5.717 6.004.358.308.678.917.678 1.85 0 1.338-.012 2.419-.012 2.745 0 .269.18.579.688.482C17.143 18.196 20 14.444 20 10.017 20 4.484 15.523 0 10 0z" clip-rule="evenodd"></path>
                         </svg>
-                        GitHub/DzungTLab
+                        GitHub
                     </a>
                 </li>
             </ul>
@@ -128,12 +148,11 @@
     </main>
 
     <footer class="footer-main">
-        <p class="footer-text">&copy; 2025 DzungTLab's Personal Portfolio. All rights reserved.</p>
-        <div class="footer-subtext">
-            Built with passion.
-        </div>
+        <p class="footer-text">&copy; 2025 DzungTLab's Personal Portfolio.</p>
+        <div class="footer-subtext">Built with ☕ and Code.</div>
     </footer>
-    <script src="script.js"></script>
-</body>
 
+    <!-- Liên kết đến file JS -->
+    <script src="./js/main.js"></script>
+</body>
 </html>
