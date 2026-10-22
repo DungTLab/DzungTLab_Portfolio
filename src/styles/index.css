@@ -1,0 +1,14 @@
+@import "tailwindcss";
+/* Preserve component cascade: theme, foundations, sections, breakpoints, interaction polish. */
+@import "./tokens.css" layer(components);
+@import "./base.css" layer(components);
+@import "./components.css" layer(components);
+@import "./responsive.css" layer(components);
+@import "./enhancements.css" layer(components);
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+@theme inline {
+  --color-canvas: var(--bg);
+  --color-ink: var(--text);
+  --color-highlight: var(--accent);
+}
