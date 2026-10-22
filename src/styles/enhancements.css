@@ -1,0 +1,79 @@
+/* Shared typography and responsive identity refinements. */
+.wordmark{font-size:23px;letter-spacing:-.045em;font-weight:700}
+.hero h1{line-height:1.22;font-weight:600}
+.hero h1 .hero-accent{font-style:normal;font-weight:500}
+.hero h1>span{display:inline-block;max-width:100%}
+.brand-image img{height:auto;aspect-ratio:1;object-fit:contain;object-position:center;filter:none}
+.project-description,.secondary-body>p,.approach-item p,.detail-grid p,.detail-single p,.about-copy,.skill-groups p,.contact-inner>div>p{font-size:14px;line-height:1.85}
+.project-kind,.project-facts strong,.tags li,.certificate p{font-size:12px;line-height:1.7}
+.language-toggle,.theme-toggle,.menu-toggle{min-width:44px;min-height:44px}
+.header-actions{gap:6px}
+.header-inner{gap:28px}
+@media(min-width:761px) and (max-width:1050px){
+  .hero{grid-template-columns:minmax(0,1fr) 220px;gap:32px}
+  .hero h1{font-size:clamp(34px,4.4vw,46px)}
+}
+@media(max-width:760px){
+  .header-inner{gap:12px}
+  .brand-card{width:min(100%,300px)}
+  .hero h1{letter-spacing:-.035em;line-height:1.24;font-size:clamp(34px,6.5vw,48px)}
+  .hero-description{font-size:15px}
+  .hero-actions{flex-wrap:wrap;gap:20px}
+  .hero-footnote{font-size:12px;align-items:flex-start}
+}
+@media(max-width:480px){
+  .wordmark{font-size:21px}
+  .header-inner{justify-content:space-between;gap:8px}
+  .header-actions{gap:2px}
+  .hero h1{font-size:clamp(32px,8vw,38px)}
+}
+
+/* Restrained interactive polish. */
+.button,.text-link,.project-link,.circle-link,.language-toggle,.theme-toggle,.menu-toggle{
+  transition:background-color .2s ease,border-color .2s ease,color .2s ease,transform .2s ease,box-shadow .2s ease;
+}
+.button{border-radius:8px;font-size:13px;font-weight:600;gap:24px;min-height:48px;padding:14px 20px}
+.hero-actions>.text-link{border:1px solid var(--line);border-radius:8px;min-height:48px;padding:12px 18px;font-size:13px;gap:16px}
+.language-toggle,.theme-toggle,.menu-toggle{border-radius:8px}
+.project-link{min-height:44px;padding:8px 0}
+.button span[aria-hidden],.text-link span[aria-hidden],.project-link span[aria-hidden]{transition:transform .2s ease}
+.button:active,.circle-link:active{transform:translateY(1px)}
+.brand-image{background:var(--surface);padding:28px;aspect-ratio:1;display:grid;place-items:center;border-radius:16px}
+.brand-image img{width:100%;height:auto;aspect-ratio:1;object-fit:contain}
+.brand-card figcaption{text-align:center}
+.stack-inner{flex-wrap:wrap;justify-content:flex-start;gap:18px 30px}
+.stack-inner .stack-label{margin-right:auto}
+.learning-strip{background:var(--soft);border-bottom:1px solid var(--line)}
+.learning-inner{display:flex;align-items:center;gap:24px;padding-block:18px}
+.learning-label{font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--muted);flex-shrink:0}
+.learning-inner ul{list-style:none;margin:0;padding:0;display:flex;gap:10px;flex-wrap:wrap}
+.learning-inner li{font-size:12px;color:var(--accent);border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:5px 12px;line-height:1.5}
+.certificate{transition:background-color .2s ease,padding-inline .2s ease;border-radius:4px}
+.cert-year{font-variant-numeric:tabular-nums}
+.hero-copy{animation:soft-enter .6s ease both}
+.brand-card{animation:soft-enter .7s .08s ease both}
+.reveal-in{animation:soft-enter .55s ease both}
+@keyframes soft-enter{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@media(hover:hover){
+  .button:hover{transform:translateY(-2px);box-shadow:0 5px 18px #00000018}
+  .hero-actions>.text-link:hover,.language-toggle:hover,.theme-toggle:hover,.menu-toggle:hover{background:var(--tint);border-color:var(--accent)}
+  .button:hover span[aria-hidden],.text-link:hover span[aria-hidden],.project-link:hover span[aria-hidden]{transform:translate(2px,-2px)}
+  .certificate:hover{background:var(--soft);padding-inline:12px}
+}
+@media(max-width:760px){
+  .stack-inner{gap:14px 22px}
+  .stack-inner .stack-label{flex-basis:100%}
+  .learning-inner{align-items:flex-start;flex-direction:column;gap:12px}
+  .hero-actions{gap:12px}
+  .button,.hero-actions>.text-link{font-size:12px;padding-inline:15px;gap:15px}
+}
+@media(prefers-reduced-motion:reduce){.hero-copy,.brand-card,.reveal-in{animation:none}}
+@media(max-width:370px){
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .hero-actions>.button,.hero-actions>.text-link{width:100%;justify-content:space-between}
+}
+
+/* A deeper green keeps the knight legible against the light surface. */
+:root:not([data-theme=dark]) .brand-image img{
+  filter:brightness(.55) saturate(.65) hue-rotate(-12deg)
+}

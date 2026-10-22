@@ -1,326 +1,319 @@
-<!DOCTYPE html>
-<html lang="vi" data-bs-theme="dark">
+<!doctype html>
+<html lang="en" data-theme="dark">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DzungTLab's Portfolio - Software Engineer</title>
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Inter:wght@300;400;500;600;700;800&display=swap"
-        rel="stylesheet">
-    <!-- Bootstrap 5.3.3 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
-    <!-- File CSS tùy biến của bạn -->
-    <link rel="stylesheet" href="./css/main.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0d0e0e">
+  <meta name="description"
+    content="Lê Tiến Dũng — Java Backend Intern. Selected Java web projects, Docker development environments, and thoughtful teamwork.">
+  <meta property="og:title" content="Lê Tiến Dũng — Java Backend Intern">
+  <meta property="og:description"
+    content="Building the logic behind the experience. Explore my projects, approach, and learning journey.">
+  <meta property="og:type" content="website">
+  <script>
+    // Apply an explicit preference before paint. Otherwise, default to black.
+    try {
+      const saved = localStorage.getItem('portfolio-theme-v2');
+      document.documentElement.dataset.theme = saved === 'light' ? 'light' : 'dark';
+    } catch { /* The default dark document is still usable. */ }
+  </script>
+  <title>DzungTLab — Lê Tiến Dũng · Java Backend</title>
+  <link rel="icon" href="%BASE_URL%assets/images/dzungtlab-logo.png" type="image/png">
+  <script type="module" src="/src/main.ts"></script>
 </head>
 
-<body class="antialiased">
+<body class="bg-canvas text-ink antialiased selection:bg-highlight selection:text-canvas">
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="wordmark" href="#home" aria-label="DzungTLab, home">DzungTLab</a>
+      <nav id="navigation" class="navigation" aria-label="Main navigation">
+        <a href="#work" data-i18n="nav.work">Work</a><a href="#approach" data-i18n="nav.approach">Approach</a><a
+          href="#about" data-i18n="nav.about">About</a><a href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch to Vietnamese"
+          hidden>VI</button>
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Use dark theme" aria-pressed="false"
+          hidden><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.5"
+            aria-hidden="true">
+            <path d="M20.5 13.5A8.5 8.5 0 0 1 10.5 3.4a8.6 8.6 0 1 0 10 10.1Z" />
+          </svg></button>
 
-    <!-- ==================== HEADER & NAVBAR ==================== -->
-    <header>
-        <nav class="navbar navbar-expand-lg fixed-top navbar-custom py-3">
-            <div class="container">
-                <a class="navbar-brand navbar-brand-code" href="#">
-                    &lt;DzungTLab /&gt;
-                </a>
-
-                <!-- Hamburger Button (Mobile) -->
-                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
-                    aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto align-items-lg-center">
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom active" href="#intro">Introduction</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="#projects">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom" href="#about">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link nav-link-custom me-lg-3" href="#contact">Contact</a>
-                        </li>
-                        <!-- Theme Toggle Item -->
-                        <li class="nav-item mt-2 mt-lg-0">
-                            <button id="theme-toggle" class="theme-btn btn-unstyled" aria-label="Toggle Dark Mode">
-                                <i id="theme-icon" class="bi bi-moon-stars-fill"></i>
-                            </button>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-
-    <main>
-        <!-- ==================== HERO SECTION ==================== -->
-        <section id="intro" class="hero-section d-flex align-items-center min-vh-100">
-            <div class="container mt-5 mt-lg-0">
-                <div class="row align-items-center g-5">
-                    <!-- Text Info Column -->
-                    <div class="col-lg-7 text-center text-lg-start">
-                        <div class="hero-badge font-code">
-                            <i class="bi bi-cpu-fill me-2"></i>Software Engineering Student
-                        </div>
-                        <h1 class="display-3 fw-extrabold mb-3">
-                            Welcome, I am <br class="d-none d-md-inline">
-                            <span class="text-accent font-code">&lt;DzungTLab /&gt;</span>
-                        </h1>
-                        <p class="fs-4 fw-normal text-secondary mb-4">
-                            I am a developer learning to become a <br>
-                            <span id="typewriter" class="text-accent font-code fw-bold"></span>
-                            <span class="typewriter-cursor">|</span>
-                        </p>
-                        <div class="d-flex flex-wrap gap-3 justify-content-center justify-content-lg-start">
-                            <a href="#projects" class="btn btn-accent px-4 py-2.5 rounded-pill fw-bold">
-                                <i class="bi bi-briefcase-fill me-2"></i>View My Work
-                            </a>
-                            <a href="#contact" class="btn btn-outline-accent px-4 py-2.5 rounded-pill fw-bold">
-                                <i class="bi bi-chat-text-fill me-2"></i>Let's Collaborate
-                            </a>
-                        </div>
-                    </div>
-
-                    <!-- IDE Code Terminal Mock Column -->
-                    <div class="col-lg-5">
-                        <div class="mock-terminal">
-                            <div class="terminal-header">
-                                <div class="terminal-dots">
-                                    <span class="dot-red"></span>
-                                    <span class="dot-yellow"></span>
-                                    <span class="dot-green"></span>
-                                </div>
-                                <span class="text-muted small font-code">DzungTLab.cpp</span>
-                            </div>
-                            <div class="terminal-body text-start">
-                                <pre class="m-0 text-secondary"><code class="font-code"><span class="text-accent">#include</span> <span class="text-success">&lt;iostream&gt;</span>
-<span class="text-accent">#include</span> <span class="text-success">&lt;vector&gt;</span>
-
-<span class="text-primary">int</span> <span class="text-info">main</span>() {
-    std::vector&lt;std::string&gt; passions = {
-        <span class="text-warning">"AI"</span>, <span class="text-warning">"Cybersecurity"</span>, <span class="text-warning">"GameDev"</span>
-    };
-    
-    std::cout &lt;&lt; <span class="text-warning">"Turning coffee into code!"</span>;
-    <span class="text-accent">return</span> <span class="text-danger">0</span>;
-}</code></pre>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== PROJECTS SECTION ==================== -->
-        <section id="projects" class="py-5 reveal">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="display-5 fw-bold text-accent mb-2">My Projects</h2>
-                    <p class="text-secondary max-w-xl mx-auto">Here are some of the creations I've forged along my
-                        programming expedition.</p>
-                    <div class="mx-auto bg-accent" style="width: 80px; height: 4px; border-radius: 2px;"></div>
-                </div>
-
-                <div class="row g-4">
-                    <!-- Project 1 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card d-flex flex-column h-100">
-                            <div class="project-img-container">
-                                <img src="./assets/images/image_webPortfolio.png"
-                                    onerror="this.src='https://placehold.co/600x400/1e293b/ef4444?text=Portfolio+Website'"
-                                    alt="Portfolio Image" class="project-img">
-                            </div>
-                            <div class="card-body p-4 d-flex flex-column flex-grow-1 text-start">
-                                <div class="mb-2">
-                                    <span class="badge bg-accent text-white font-code">HTML5</span>
-                                    <span class="badge bg-primary text-white font-code">CSS3</span>
-                                    <span class="badge bg-warning text-dark font-code">JS</span>
-                                </div>
-                                <h3 class="h4 fw-bold mb-2">Portfolio Website</h3>
-                                <p class="text-secondary flex-grow-1">My debut project, designed to showcase my
-                                    development journey and technical skillset using modern web standards.</p>
-                                <a href="https://dungtlab.github.io/DzungTLab_Portfolio/" target="_blank"
-                                    class="btn btn-outline-accent w-100 mt-3 rounded-3 font-code">
-                                    <i class="bi bi-box-arrow-up-right me-2"></i>Live Demo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project 2 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card d-flex flex-column h-100">
-                            <div class="project-img-container">
-                                <img src="https://placehold.co/600x400/1f2937/4ade80?text=App+In+Progress"
-                                    alt="Project 2 Image" class="project-img">
-                            </div>
-                            <div class="card-body p-4 d-flex flex-column flex-grow-1 text-start">
-                                <div class="mb-2">
-                                    <span class="badge bg-success text-white font-code">Python</span>
-                                    <span class="badge bg-info text-dark font-code">TensorFlow</span>
-                                </div>
-                                <h3 class="h4 fw-bold mb-2">Next Big Thing</h3>
-                                <p class="text-secondary flex-grow-1">Currently researching AI integration for everyday
-                                    productivity tasks. Developing utilizing machine learning concepts.</p>
-                                <button class="btn btn-outline-accent w-100 mt-3 rounded-3 font-code disabled" disabled>
-                                    <i class="bi bi-hourglass-split me-2"></i>Details Soon
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Project 3 -->
-                    <div class="col-md-6 col-lg-4">
-                        <div class="project-card d-flex flex-column h-100">
-                            <div class="project-img-container">
-                                <img src="https://placehold.co/600x400/1f2937/60a5fa?text=Game+Engine+C%2B%2B"
-                                    alt="Project 3 Image" class="project-img">
-                            </div>
-                            <div class="card-body p-4 d-flex flex-column flex-grow-1 text-start">
-                                <div class="mb-2">
-                                    <span class="badge bg-dark border text-white font-code">C++</span>
-                                    <span class="badge bg-danger text-white font-code">OpenGL</span>
-                                </div>
-                                <h3 class="h4 fw-bold mb-2">2D Game Engine</h3>
-                                <p class="text-secondary flex-grow-1">A lightweight C++ game engine aimed at
-                                    understanding memory allocation structures and basic rendering pipelines.</p>
-                                <a href="#" class="btn btn-outline-accent w-100 mt-3 rounded-3 font-code">
-                                    <i class="bi bi-github me-2"></i>GitHub Repo
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== ABOUT SECTION ==================== -->
-        <section id="about" class="py-5 reveal">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="display-5 fw-bold text-accent mb-2">About Me</h2>
-                    <div class="mx-auto bg-accent" style="width: 80px; height: 4px; border-radius: 2px;"></div>
-                </div>
-
-                <div class="p-4 p-md-5 rounded-4"
-                    style="background-color: var(--card-bg); border: 1px solid rgba(148, 163, 184, 0.1);">
-                    <div class="row align-items-center g-5">
-                        <!-- Profile Image Wrapper Column -->
-                        <div class="col-lg-4 text-center">
-                            <div class="about-img-frame">
-                                <img src="./assets/images/Avt.jpg"
-                                    onerror="this.src='https://placehold.co/400x400/ef4444/ffffff?text=Dzung'"
-                                    alt="DzungTLab Profile" class="profile-avatar img-fluid">
-                            </div>
-                        </div>
-                        <!-- Profile Description Column -->
-                        <div class="col-lg-8 text-start">
-                            <h3 class="h3 fw-bold mb-3 text-accent font-code">Hello! I'm DzungTLab</h3>
-                            <p class="fs-5 text-secondary">
-                                I'm a passionate Software Engineering student with about
-                                <span class="text-accent fw-bold font-code">[2]</span> years of hands-on experience in
-                                program construction.
-                            </p>
-                            <p class="text-secondary">
-                                My interests lie at the intersection of <strong class="text-accent">Artificial
-                                    Intelligence, Cybersecurity, and Game Development</strong>. I love taking on
-                                intricate logical block problems and optimizing efficient algorithms.
-                            </p>
-
-                            <!-- Custom Tech Stack Badges Section -->
-                            <div class="mt-4">
-                                <h4 class="h5 fw-bold mb-3">My Core Tech Stack:</h4>
-                                <div class="d-flex flex-wrap gap-2">
-                                    <span class="skill-badge font-code">C / C++</span>
-                                    <span class="skill-badge font-code">Java</span>
-                                    <span class="skill-badge font-code">Python</span>
-                                    <span class="skill-badge font-code">HTML / CSS / JS</span>
-                                    <span class="skill-badge font-code">Bootstrap</span>
-                                    <span class="skill-badge font-code">SQL</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ==================== CONTACT SECTION ==================== -->
-        <section id="contact" class="py-5 reveal">
-            <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="display-5 fw-bold text-accent mb-2">Contact Me</h2>
-                    <p class="text-secondary max-w-xl mx-auto">Have an idea, want to build awesome systems together, or
-                        just talk tech? Let's get in touch!</p>
-                    <div class="mx-auto bg-accent" style="width: 80px; height: 4px; border-radius: 2px;"></div>
-                </div>
-
-                <!-- Contact Grid links -->
-                <div class="row justify-content-center g-4">
-                    <!-- Email Card -->
-                    <div class="col-md-4">
-                        <a href="mailto:Dungletiense@gmail.com" class="contact-card">
-                            <div class="contact-icon-wrapper">
-                                <i class="bi bi-envelope-heart-fill"></i>
-                            </div>
-                            <div class="text-start">
-                                <h4 class="h6 text-secondary m-0">Email Me</h4>
-                                <span class="fw-bold small text-truncate d-block"
-                                    style="max-width: 180px;">Dungletiense@gmail.com</span>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- LinkedIn Card -->
-                    <div class="col-md-4">
-                        <a href="https://www.linkedin.com/in/d%C5%A9ng-l%C3%AA-941050380/" target="_blank"
-                            class="contact-card">
-                            <div class="contact-icon-wrapper">
-                                <i class="bi bi-linkedin"></i>
-                            </div>
-                            <div class="text-start">
-                                <h4 class="h6 text-secondary m-0">LinkedIn</h4>
-                                <span class="fw-bold small">Dũng Lê</span>
-                            </div>
-                        </a>
-                    </div>
-                    <!-- GitHub Card -->
-                    <div class="col-md-4">
-                        <a href="https://github.com/DungTLab" target="_blank" class="contact-card">
-                            <div class="contact-icon-wrapper">
-                                <i class="bi bi-github"></i>
-                            </div>
-                            <div class="text-start">
-                                <h4 class="h6 text-secondary m-0">GitHub</h4>
-                                <span class="fw-bold small">DungTLab</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- ==================== FOOTER ==================== -->
-    <footer class="py-5 text-center mt-5">
-        <div class="container">
-            <p class="mb-2 text-secondary">&copy; 2025 DzungTLab's Personal Portfolio.</p>
-            <div class="small text-secondary">
-                Built with <span class="text-accent"><i class="bi bi-cup-hot-fill animate-beat"></i></span> &amp;
-                Bootstrap 5.
-            </div>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-controls="navigation" aria-expanded="false"
+          aria-label="Open navigation" hidden><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+  <main id="main">
+    <section id="home" class="hero shell" aria-labelledby="hero-title">
+      <div class="hero-copy min-w-0">
+        <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span><span data-i18n="hero.eyebrow">JAVA
+            BACKEND · STUDENT & BUILDER</span></p>
+        <h1 id="hero-title"><span data-i18n="hero.line1">Building the logic.</span><br><span class="hero-accent" data-i18n="hero.line2">Behind
+            the experience.</span></h1>
+        <p class="hero-description" data-i18n="hero.description">I'm Dũng, a Software Engineering student who enjoys
+          understanding how things work — then turning that understanding into practical Java web projects.</p>
+        <div class="hero-actions"><a class="button button-primary" href="#work"><span data-i18n="hero.work">Explore my
+              work</span><span aria-hidden="true">↘</span></a><a class="text-link" href="#contact"><span data-i18n="nav.contact">Contact</span><span aria-hidden="true">↗</span></a></div>
+        <div class="hero-footnote"><span class="tiny-symbol" aria-hidden="true">✳</span><span
+            data-i18n="hero.location">Based in Cần Thơ, Vietnam. Seeking a Java Backend internship.</span></div>
+      </div>
+      <figure class="brand-card min-w-0">
+        <div class="brand-image"><img src="%BASE_URL%assets/images/dzungtlab-logo.png" width="1024" height="1024"
+            alt="DzungTLab — circuit knight logo" fetchpriority="high" decoding="async"></div>
+        <figcaption><span data-i18n="hero.caption">Curious by nature. Learning by building.</span></figcaption>
+      </figure>
+    </section>
+    <div class="stack-strip">
+      <div class="shell stack-inner"><span class="stack-label" data-i18n="stack.label">MY EVERYDAY
+          TOOLKIT</span><span>Java</span><span>Spring Boot</span><span>MySQL</span><span>SQL Server</span><span>Docker</span><span>Git /
+          GitHub</span></div>
+    </div>
+    <div class="learning-strip">
+      <div class="shell learning-inner"><span class="learning-label" data-i18n="learning.label">CURRENTLY LEARNING</span>
+        <ul aria-label="Learning technologies"><li>CI/CD &amp; Deployment</li><li>Spring Framework</li><li>MySQL</li><li>C#</li></ul>
+      </div>
+    </div>
+    <section id="work" class="section shell" aria-labelledby="work-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow" data-i18n="work.eyebrow">01 / SELECTED WORK</p>
+          <h2 id="work-title" data-i18n="work.title">Built to learn. Made to work.</h2>
         </div>
-    </footer>
-
-    <!-- Bootstrap 5.3.3 Bundle with Popper -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- File JavaScript tùy biến của bạn -->
-    <script src="./js/main.js"></script>
+        <p class="section-intro" data-i18n="work.intro">Two course projects. Real collaboration, technical decisions,
+          and lessons along the way.</p>
+      </div>
+      <article class="project project-featured">
+        <div class="project-content min-w-0">
+          <div class="project-topline"><span class="project-index">01</span><span class="pill"><span class="status-dot"
+                aria-hidden="true"></span><span data-i18n="work.ongoing">IN PROGRESS</span></span></div>
+          <h3>AureliaBooks<span class="project-suffix"> / DDAGTech</span></h3>
+          <p class="project-kind" data-i18n="work.p1kind">SWP391 · Online book & stationery store</p>
+          <p class="project-description" data-i18n="work.p1description">A team project where I connect functional design
+            with practical development: shaping account flows, setting up a shared environment, and helping the team
+            work together.</p>
+          <div class="project-facts">
+            <div><span data-i18n="fact.role">ROLE</span><strong data-i18n="work.p1role">Team lead / project
+                coordination</strong></div>
+            <div><span data-i18n="fact.team">TEAM</span><strong data-i18n="fact.five">5 people</strong></div>
+            <div><span data-i18n="fact.period">PERIOD</span><strong data-i18n="work.p1period">Jun 2026 –
+                present</strong></div>
+          </div>
+          <ul class="tags" aria-label="Project technologies">
+            <li>Java 21</li>
+            <li>Spring Boot</li>
+            <li>Thymeleaf</li>
+            <li>MySQL</li>
+          </ul>
+          <a class="project-link" href="https://github.com/DungTLab/AureliaBooks_DDAGTech" target="_blank"
+            rel="noopener"><span data-i18n="work.source">Explore the repository</span><span
+              aria-hidden="true">↗</span></a>
+        </div>
+        <div class="project-visual" aria-label="Development environment overview">
+          <div class="blueprint-top"><span class="mini-dots" aria-hidden="true">● ● ●</span><span>development /
+              overview</span></div>
+          <div class="architecture">
+            <div class="architecture-label" data-i18n="work.blueprint">A SHARED STARTING POINT</div>
+            <div class="arch-node"><span class="node-icon" aria-hidden="true">{ }</span>
+              <div><strong>Java application</strong><span>Spring Boot · Thymeleaf</span></div>
+            </div>
+            <div class="arch-connector"><span></span><code>application.yaml</code></div>
+            <div class="arch-node"><span class="node-icon" aria-hidden="true">▤</span>
+              <div><strong>MySQL</strong><span>Docker Compose</span></div><span class="node-badge">DB</span>
+            </div>
+            <p data-i18n="work.visualnote">One configuration. A team that can run the project independently.</p>
+          </div>
+          <div class="blueprint-bottom"><span data-i18n="work.diagramlabel">Development setup concept</span><span
+              aria-hidden="true">↗</span></div>
+        </div>
+        <details class="project-details">
+          <summary><span data-i18n="work.details">My contribution & what I learned</span><span class="details-plus"
+              aria-hidden="true">+</span></summary>
+          <div class="detail-grid">
+            <div>
+              <h4 data-i18n="work.p1detail1title">Design before implementation</h4>
+              <p data-i18n="work.p1detail1">Designed account and Google sign-in flows, prototyped the approach, and
+                discussed it with teammates and the lecturer before adoption. Used AI coding assistance and reviewed the
+                output with the team.</p>
+            </div>
+            <div>
+              <h4 data-i18n="work.p1detail2title">An environment for everyone</h4>
+              <p data-i18n="work.p1detail2">Learned Docker Compose to configure MySQL and application settings. After a
+                walkthrough, teammates could run the project independently.</p>
+            </div>
+            <div>
+              <h4 data-i18n="work.p1detail3title">A reviewable way of working</h4>
+              <p data-i18n="work.p1detail3">Set up feature branches, protected main, and required at least one approval
+                per PR. Reviewed against Definition of Done and checked revised functionality with black-box testing.
+              </p>
+            </div>
+          </div>
+        </details>
+      </article>
+      <article class="project project-secondary">
+        <div class="project-secondary-heading"><span class="project-index">02</span>
+          <div>
+            <h3>AureliaBooks<span class="project-suffix"> / Java Web</span></h3>
+            <p class="project-kind" data-i18n="work.p2kind">PRJ301 · Completed · May – Jul 2026 · 5-person team</p>
+          </div><a class="circle-link" href="https://github.com/DungTLab/AureliaBooks" target="_blank" rel="noopener"
+            aria-label="View AureliaBooks PRJ301 repository">↗</a>
+        </div>
+        <div class="secondary-body">
+          <p data-i18n="work.p2description">The foundation: a Servlet/JSP commerce project. I handled BaseDAO, security
+            filters, password-based authentication, profiles, password changes and brand management, alongside team
+            coordination.</p>
+          <ul class="tags" aria-label="Project technologies">
+            <li>Java 17</li>
+            <li>Servlet / JSP</li>
+            <li>SQL Server</li>
+            <li>Maven</li>
+          </ul>
+        </div>
+        <details class="project-details">
+          <summary><span data-i18n="work.p2details">A note on my process</span><span class="details-plus"
+              aria-hidden="true">+</span></summary>
+          <div class="detail-single">
+            <p data-i18n="work.p2process">I used AI to assist code generation, then edited and checked the
+              implementation. This course project helped me build familiarity with Java web fundamentals and recognize
+              where I needed a deeper understanding.</p>
+          </div>
+        </details>
+      </article>
+    </section>
+    <section id="approach" class="approach-section" aria-labelledby="approach-title">
+      <div class="shell section">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow" data-i18n="approach.eyebrow">02 / HOW I WORK</p>
+            <h2 id="approach-title" data-i18n="approach.title">Curiosity, with a process.</h2>
+          </div>
+          <p class="section-intro" data-i18n="approach.intro">A good tool helps. Understanding the problem comes first.
+          </p>
+        </div>
+        <div class="approach-grid">
+          <article class="approach-item"><span class="step-number">01 /</span>
+            <h3 data-i18n="approach.1title">Understand & prototype</h3>
+            <p data-i18n="approach.1text">Explore how a technology works, design the flow, and try a small demo before
+              committing the team to a solution.</p>
+          </article>
+          <article class="approach-item"><span class="step-number">02 /</span>
+            <h3 data-i18n="approach.2title">Build together</h3>
+            <p data-i18n="approach.2text">Break work into clear tasks. Use branches, pull requests and peer review to
+              keep contributions understandable.</p>
+          </article>
+          <article class="approach-item"><span class="step-number">03 /</span>
+            <h3 data-i18n="approach.3title">Use AI thoughtfully</h3>
+            <p data-i18n="approach.3text">Use Codex for coding and review assistance; organize prompts, skills and
+              workflows. Experiment with MCP/API integrations, then check the output.</p>
+          </article>
+          <article class="approach-item"><span class="step-number">04 /</span>
+            <h3 data-i18n="approach.4title">Check & learn</h3>
+            <p data-i18n="approach.4text">Compare the result with requirements, test the behavior, and turn feedback
+              into a better next iteration.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="section shell" aria-labelledby="about-title">
+      <div class="about-grid">
+        <div>
+          <p class="eyebrow" data-i18n="about.eyebrow">03 / A LITTLE CONTEXT</p>
+          <h2 id="about-title" data-i18n="about.title">Still learning. Always building.</h2>
+          <p class="about-copy" data-i18n="about.copy">I'm Lê Tiến Dũng, studying Information Technology with a
+            specialization in Software Engineering at FPT University, Cần Thơ. I enjoy exploring architecture and
+            technology, designing application flows, and helping teammates work through problems.</p>
+        </div>
+        <div class="about-facts min-w-0">
+          <div class="fact-row"><span data-i18n="about.education">EDUCATION</span>
+            <div><strong data-i18n="about.school">FPT University, Cần Thơ</strong>
+              <p data-i18n="about.degree">IT · Software Engineering specialization</p>
+              <p data-i18n="about.year">2024 – present · Expected graduation 2028</p>
+            </div>
+          </div>
+          <div class="fact-row"><span>GPA</span>
+            <div><strong class="gpa">3.35<span> / 4.0</span></strong></div>
+          </div>
+          <div class="fact-row"><span data-i18n="about.community">COMMUNITY</span>
+            <div><strong data-i18n="about.club">Academic Committee · F-Coder</strong>
+              <p data-i18n="about.clubtext">Taught two C/C++ sessions; authored one contest problem and three problems
+                for the club bank.</p>
+            </div>
+          </div>
+          <div class="fact-row"><span data-i18n="about.award">RECOGNITION</span>
+            <div><strong data-i18n="about.prize">Third Prize · AlgoForge 2026</strong>
+              <p data-i18n="about.prizetext">F-Coder club-level algorithm contest</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-groups">
+        <div>
+          <h3 data-i18n="skills.1">Languages & web</h3>
+          <p>Java · SQL · C / C++<br>HTML · CSS · JavaScript</p>
+        </div>
+        <div>
+          <h3 data-i18n="skills.2">Backend & data</h3>
+          <p>Spring Boot · Servlet / JSP<br>Thymeleaf · MySQL · SQL Server</p>
+        </div>
+        <div>
+          <h3 data-i18n="skills.3">Tools & collaboration</h3>
+          <p>Git / GitHub · Maven<br>Docker Compose · Codex</p>
+        </div>
+        <div>
+          <h3 data-i18n="skills.4">Technical English</h3>
+          <p data-i18n="skills.english">Comfortable reading most technical documentation directly.</p>
+        </div>
+      </div>
+      <div class="certificates">
+        <div class="subsection-title">
+          <h3 data-i18n="cert.title">Learning, documented.</h3><span data-i18n="cert.subtitle">COURSE COMPLETION
+            CERTIFICATES</span>
+        </div><a class="certificate" href="https://coursera.org/share/291203260c0e2201cb0738cbfbd3fe02" target="_blank"
+          rel="noopener"><span class="cert-year">2026</span>
+          <div>
+            <h4>Software Engineering Specialization</h4>
+            <p>The Hong Kong University of Science and Technology · Coursera</p>
+          </div><span aria-hidden="true">↗</span>
+        </a>
+        <a class="certificate"
+          href="https://github.com/DungTLab/uni-docs/blob/02e2549fb015b03f2d8bd7b67ea94e02b49d0af0/Certificate/L%C3%AA%20Ti%E1%BA%BFn%20D%C5%A9ng.pdf"
+          target="_blank" rel="noopener"><span class="cert-year">2026</span>
+          <div>
+            <h4>Vibe Coding: Triển khai website chuẩn doanh nghiệp</h4>
+            <p>Rikkei Education</p>
+          </div><span aria-hidden="true">↗</span>
+        </a>
+        <a class="certificate" href="https://coursera.org/share/a802398ed7aac15fd3e1490cac3ee07e" target="_blank"
+          rel="noopener"><span class="cert-year">2025</span>
+          <div>
+            <h4>Web Design for Everybody: Basics of Web Development & Coding</h4>
+            <p>University of Michigan · Coursera</p>
+          </div><span aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </section>
+    <section id="contact" class="contact-section" aria-labelledby="contact-title">
+      <div class="shell contact-inner">
+        <div>
+          <p class="eyebrow" data-i18n="contact.eyebrow">04 / WHAT'S NEXT</p>
+          <h2 id="contact-title" data-i18n="contact.title">Let's build something thoughtful.</h2>
+          <p data-i18n="contact.text">I'm looking for a Java Backend internship and a team to learn from. If that sounds
+            like a fit, I'd be glad to connect.</p><a class="contact-email"
+            href="mailto:Dungletiense@gmail.com">Dungletiense@gmail.com <span aria-hidden="true">↗</span></a>
+        </div>
+        <div class="contact-links"><a href="https://github.com/DungTLab" target="_blank" rel="noopener">GitHub <span
+              aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/d%C5%A9ng-l%C3%AA-941050380/"
+            target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </section>
+  </main>
+  <footer class="shell footer"><a class="wordmark" href="#home" aria-label="DzungTLab, home">DzungTLab</a>
+    <p>© 2026 Lê Tiến Dũng<span class="footer-note" data-i18n="footer.note"> · Thoughtfully built, always
+        evolving.</span></p><a href="#home" class="back-top"><span data-i18n="footer.top">Back to top</span><span
+        aria-hidden="true">↑</span></a>
+  </footer>
 </body>
 
 </html>
