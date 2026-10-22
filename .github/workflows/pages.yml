@@ -1,7 +1,8 @@
 name: Deploy portfolio to GitHub Pages
 
-# Manual dispatch keeps publication separate from local development.
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 permissions:
