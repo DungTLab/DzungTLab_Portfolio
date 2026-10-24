@@ -159,24 +159,6 @@
   font-size:13px;
   line-height:1.7
 }
-.stack-strip{
-  border-block:1px solid var(--line)
-}
-.stack-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:22px;
-  padding-block:25px;
-  font-size:15px;
-  letter-spacing:-.3px
-}
-.stack-inner .stack-label{
-  font-size:12px;
-  letter-spacing:.12em;
-  color:var(--muted);
-  margin-right:25px
-}
 /* Projects */
 .section-heading{
   display:flex;
@@ -572,24 +554,6 @@
 }
 .certificates{
   margin-top:50px
-}
-.subsection-title{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-  margin-bottom:20px
-}
-.subsection-title h3{
-  font-size:23px;
-  font-family:var(--sans);
-  font-weight:400;
-  letter-spacing:-.4px
-}
-.subsection-title>span{
-  font-size:12px;
-  letter-spacing:.11em;
-  color:var(--muted)
 }
 .certificate{
   display:grid;

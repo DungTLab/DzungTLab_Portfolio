@@ -45,9 +45,6 @@
   .contact-inner{
     gap:60px
   }
-  .stack-inner .stack-label{
-    margin-right:0
-  }
   .approach-grid{
     gap:23px
   }
@@ -163,18 +160,6 @@
   .brand-card figcaption{
     padding-top:12px
   }
-  .stack-inner{
-    flex-wrap:wrap;
-    justify-content:flex-start;
-    column-gap:24px;
-    row-gap:15px;
-    padding-block:20px;
-    font-size:13px
-  }
-  .stack-inner .stack-label{
-    flex-basis:100%;
-    font-size:12px
-  }
   .section{
     padding-block:65px
   }
@@ -274,11 +259,6 @@
     gap:28px 20px;
     margin-top:35px
   }
-  .subsection-title{
-    align-items:start;
-    flex-direction:column;
-    gap:12px
-  }
   .certificate{
     grid-template-columns:40px 1fr 20px;
     gap:10px
@@ -361,7 +341,7 @@
   }
 }
 @media print{
-  .site-header,.hero-actions,.hero-footnote,.stack-strip,.project-visual,.header-actions,.contact-links,.back-top{
+  .site-header,.hero-actions,.hero-footnote,.project-visual,.header-actions,.contact-links,.back-top{
     display:none!important
   }
   .shell{

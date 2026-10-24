@@ -29,8 +29,7 @@
     <div class="shell header-inner">
       <a class="wordmark" href="#home" aria-label="DzungTLab, home">DzungTLab</a>
       <nav id="navigation" class="navigation" aria-label="Main navigation">
-        <a href="#work" data-i18n="nav.work">Work</a><a href="#approach" data-i18n="nav.approach">Approach</a><a
-          href="#about" data-i18n="nav.about">About</a><a href="#contact" data-i18n="nav.contact">Contact</a>
+        <a href="#about" data-i18n="nav.about">About</a><a href="#work" data-i18n="nav.work">Work</a><a href="#approach" data-i18n="nav.approach">Approach</a><a href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="header-actions">
         <button class="language-toggle" id="language-toggle" type="button" aria-label="Switch to Vietnamese"
@@ -66,20 +65,100 @@
         <figcaption><span data-i18n="hero.caption">Curious by nature. Learning by building.</span></figcaption>
       </figure>
     </section>
-    <div class="stack-strip">
-      <div class="shell stack-inner"><span class="stack-label" data-i18n="stack.label">MY EVERYDAY
-          TOOLKIT</span><span>Java</span><span>Spring Boot</span><span>MySQL</span><span>SQL Server</span><span>Docker</span><span>Git /
-          GitHub</span></div>
-    </div>
-    <div class="learning-strip">
-      <div class="shell learning-inner"><span class="learning-label" data-i18n="learning.label">CURRENTLY LEARNING</span>
-        <ul aria-label="Learning technologies"><li>CI/CD &amp; Deployment</li><li>Spring Framework</li><li>MySQL</li><li>C#</li></ul>
+    <div class="toolkit-overview">
+      <div class="shell toolkit-grid">
+        <section class="toolkit-panel" aria-labelledby="toolkit-used-title">
+          <h2 id="toolkit-used-title" data-i18n="stack.label">MY EVERYDAY TOOLKIT</h2>
+          <ul class="toolkit-tags"><li>Java</li><li>Spring Boot</li><li>MySQL</li><li>SQL Server</li><li>Docker</li><li>Git / GitHub</li></ul>
+        </section>
+        <section class="toolkit-panel toolkit-learning" aria-labelledby="toolkit-learning-title">
+          <h2 id="toolkit-learning-title" data-i18n="learning.label">CURRENTLY LEARNING</h2>
+          <ul class="toolkit-tags"><li>CI/CD &amp; Deployment</li><li>Spring Framework</li><li>MySQL</li><li>C#</li><li>JWT</li><li>REST API</li></ul>
+        </section>
       </div>
     </div>
+    <section id="about" class="section shell" aria-labelledby="about-title">
+      <div class="about-grid">
+        <div>
+          <p class="eyebrow" data-i18n="about.eyebrow">01 / A LITTLE CONTEXT</p>
+          <h2 id="about-title" data-i18n="about.title">Still learning. Always building.</h2>
+          <p class="about-copy" data-i18n="about.copy">I'm Lê Tiến Dũng, studying Information Technology with a
+            specialization in Software Engineering at FPT University, Cần Thơ. I enjoy exploring architecture and
+            technology, designing application flows, and helping teammates work through problems.</p>
+        </div>
+        <div class="about-facts min-w-0">
+          <div class="fact-row"><span data-i18n="about.education">EDUCATION</span>
+            <div><strong data-i18n="about.school">FPT University, Cần Thơ</strong>
+              <p data-i18n="about.degree">IT · Software Engineering specialization</p>
+              <p data-i18n="about.year">2024 – present · Expected graduation 2028</p>
+            </div>
+          </div>
+          <div class="fact-row"><span>GPA</span>
+            <div><strong class="gpa">3.35<span> / 4.0</span></strong></div>
+          </div>
+          <div class="fact-row"><span data-i18n="about.community">COMMUNITY</span>
+            <div><strong data-i18n="about.club">Academic Committee · F-Coder</strong>
+              <p data-i18n="about.clubtext">Taught two C/C++ sessions; authored one contest problem and three problems
+                for the club bank.</p>
+            </div>
+          </div>
+          <div class="fact-row"><span data-i18n="about.award">RECOGNITION</span>
+            <div><strong data-i18n="about.prize">Third Prize · AlgoForge 2026</strong>
+              <p data-i18n="about.prizetext">F-Coder club-level algorithm contest</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="skill-groups">
+        <div>
+          <h3 data-i18n="skills.1">Languages & web</h3>
+          <p>Java · SQL · C / C++<br>HTML · CSS · JavaScript</p>
+        </div>
+        <div>
+          <h3 data-i18n="skills.2">Backend & data</h3>
+          <p>Spring Boot · Servlet / JSP<br>Thymeleaf · MySQL · SQL Server</p>
+        </div>
+        <div>
+          <h3 data-i18n="skills.3">Tools & collaboration</h3>
+          <p>Git / GitHub · Maven<br>Docker Compose · Codex</p>
+        </div>
+        <div>
+          <h3 data-i18n="skills.4">Technical English</h3>
+          <p data-i18n="skills.english">Comfortable reading most technical documentation directly.</p>
+        </div>
+      </div>
+      <details class="certificates certificate-disclosure">
+        <summary><span><strong data-i18n="cert.title">Learning, documented.</strong><small data-i18n="cert.subtitle">COURSE COMPLETION CERTIFICATES</small></span><span class="certificate-count" aria-hidden="true">3 <span class="details-plus">+</span></span></summary>
+        <div class="certificate-list"><a class="certificate" href="https://coursera.org/share/291203260c0e2201cb0738cbfbd3fe02" target="_blank"
+          rel="noopener"><span class="cert-year">2026</span>
+          <div>
+            <h4>Software Engineering Specialization</h4>
+            <p>The Hong Kong University of Science and Technology · Coursera</p>
+          </div><span aria-hidden="true">↗</span>
+        </a>
+        <a class="certificate"
+          href="https://github.com/DungTLab/uni-docs/blob/02e2549fb015b03f2d8bd7b67ea94e02b49d0af0/Certificate/L%C3%AA%20Ti%E1%BA%BFn%20D%C5%A9ng.pdf"
+          target="_blank" rel="noopener"><span class="cert-year">2026</span>
+          <div>
+            <h4>Vibe Coding: Triển khai website chuẩn doanh nghiệp</h4>
+            <p>Rikkei Education</p>
+          </div><span aria-hidden="true">↗</span>
+        </a>
+        <a class="certificate" href="https://coursera.org/share/a802398ed7aac15fd3e1490cac3ee07e" target="_blank"
+          rel="noopener"><span class="cert-year">2025</span>
+          <div>
+            <h4>Web Design for Everybody: Basics of Web Development & Coding</h4>
+            <p>University of Michigan · Coursera</p>
+          </div><span aria-hidden="true">↗</span>
+        </a>
+        </div>
+      </details>
+
+    </section>
     <section id="work" class="section shell" aria-labelledby="work-title">
       <div class="section-heading">
         <div>
-          <p class="eyebrow" data-i18n="work.eyebrow">01 / SELECTED WORK</p>
+          <p class="eyebrow" data-i18n="work.eyebrow">02 / SELECTED WORK</p>
           <h2 id="work-title" data-i18n="work.title">Built to learn. Made to work.</h2>
         </div>
         <p class="section-intro" data-i18n="work.intro">Two course projects. Real collaboration, technical decisions,
@@ -186,7 +265,7 @@
       <div class="shell section">
         <div class="section-heading">
           <div>
-            <p class="eyebrow" data-i18n="approach.eyebrow">02 / HOW I WORK</p>
+            <p class="eyebrow" data-i18n="approach.eyebrow">03 / HOW I WORK</p>
             <h2 id="approach-title" data-i18n="approach.title">Curiosity, with a process.</h2>
           </div>
           <p class="section-intro" data-i18n="approach.intro">A good tool helps. Understanding the problem comes first.
@@ -216,84 +295,6 @@
         </div>
       </div>
     </section>
-    <section id="about" class="section shell" aria-labelledby="about-title">
-      <div class="about-grid">
-        <div>
-          <p class="eyebrow" data-i18n="about.eyebrow">03 / A LITTLE CONTEXT</p>
-          <h2 id="about-title" data-i18n="about.title">Still learning. Always building.</h2>
-          <p class="about-copy" data-i18n="about.copy">I'm Lê Tiến Dũng, studying Information Technology with a
-            specialization in Software Engineering at FPT University, Cần Thơ. I enjoy exploring architecture and
-            technology, designing application flows, and helping teammates work through problems.</p>
-        </div>
-        <div class="about-facts min-w-0">
-          <div class="fact-row"><span data-i18n="about.education">EDUCATION</span>
-            <div><strong data-i18n="about.school">FPT University, Cần Thơ</strong>
-              <p data-i18n="about.degree">IT · Software Engineering specialization</p>
-              <p data-i18n="about.year">2024 – present · Expected graduation 2028</p>
-            </div>
-          </div>
-          <div class="fact-row"><span>GPA</span>
-            <div><strong class="gpa">3.35<span> / 4.0</span></strong></div>
-          </div>
-          <div class="fact-row"><span data-i18n="about.community">COMMUNITY</span>
-            <div><strong data-i18n="about.club">Academic Committee · F-Coder</strong>
-              <p data-i18n="about.clubtext">Taught two C/C++ sessions; authored one contest problem and three problems
-                for the club bank.</p>
-            </div>
-          </div>
-          <div class="fact-row"><span data-i18n="about.award">RECOGNITION</span>
-            <div><strong data-i18n="about.prize">Third Prize · AlgoForge 2026</strong>
-              <p data-i18n="about.prizetext">F-Coder club-level algorithm contest</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="skill-groups">
-        <div>
-          <h3 data-i18n="skills.1">Languages & web</h3>
-          <p>Java · SQL · C / C++<br>HTML · CSS · JavaScript</p>
-        </div>
-        <div>
-          <h3 data-i18n="skills.2">Backend & data</h3>
-          <p>Spring Boot · Servlet / JSP<br>Thymeleaf · MySQL · SQL Server</p>
-        </div>
-        <div>
-          <h3 data-i18n="skills.3">Tools & collaboration</h3>
-          <p>Git / GitHub · Maven<br>Docker Compose · Codex</p>
-        </div>
-        <div>
-          <h3 data-i18n="skills.4">Technical English</h3>
-          <p data-i18n="skills.english">Comfortable reading most technical documentation directly.</p>
-        </div>
-      </div>
-      <div class="certificates">
-        <div class="subsection-title">
-          <h3 data-i18n="cert.title">Learning, documented.</h3><span data-i18n="cert.subtitle">COURSE COMPLETION
-            CERTIFICATES</span>
-        </div><a class="certificate" href="https://coursera.org/share/291203260c0e2201cb0738cbfbd3fe02" target="_blank"
-          rel="noopener"><span class="cert-year">2026</span>
-          <div>
-            <h4>Software Engineering Specialization</h4>
-            <p>The Hong Kong University of Science and Technology · Coursera</p>
-          </div><span aria-hidden="true">↗</span>
-        </a>
-        <a class="certificate"
-          href="https://github.com/DungTLab/uni-docs/blob/02e2549fb015b03f2d8bd7b67ea94e02b49d0af0/Certificate/L%C3%AA%20Ti%E1%BA%BFn%20D%C5%A9ng.pdf"
-          target="_blank" rel="noopener"><span class="cert-year">2026</span>
-          <div>
-            <h4>Vibe Coding: Triển khai website chuẩn doanh nghiệp</h4>
-            <p>Rikkei Education</p>
-          </div><span aria-hidden="true">↗</span>
-        </a>
-        <a class="certificate" href="https://coursera.org/share/a802398ed7aac15fd3e1490cac3ee07e" target="_blank"
-          rel="noopener"><span class="cert-year">2025</span>
-          <div>
-            <h4>Web Design for Everybody: Basics of Web Development & Coding</h4>
-            <p>University of Michigan · Coursera</p>
-          </div><span aria-hidden="true">↗</span>
-        </a>
-      </div>
-    </section>
     <section id="contact" class="contact-section" aria-labelledby="contact-title">
       <div class="shell contact-inner">
         <div>
@@ -304,7 +305,7 @@
             href="mailto:Dungletiense@gmail.com">Dungletiense@gmail.com <span aria-hidden="true">↗</span></a>
         </div>
         <div class="contact-links"><a href="https://github.com/DungTLab" target="_blank" rel="noopener">GitHub <span
-              aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/d%C5%A9ng-l%C3%AA-941050380/"
+              aria-hidden="true">↗</span></a><a href="https://www.linkedin.com/in/letiendung/"
             target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></div>
       </div>
     </section>

@@ -28,7 +28,10 @@ export function initNavigation(updateControlLabels: () => void): void {
   menuButton.hidden = false;
 
   const navLinks = [...navigation.querySelectorAll<HTMLAnchorElement>('a')];
-  const sections = navLinks.map(link => required<HTMLElement>(link.hash));
+  // Track document order independently of how navigation links are arranged.
+  const sectionIds = new Set(navLinks.map(link => link.hash.slice(1)));
+  const sections = [...document.querySelectorAll<HTMLElement>('main section[id]')]
+    .filter(section => sectionIds.has(section.id));
   let scheduled = false;
 
   function updateActiveSection(): void {

@@ -41,13 +41,6 @@
 .brand-image{background:var(--surface);padding:28px;aspect-ratio:1;display:grid;place-items:center;border-radius:16px}
 .brand-image img{width:100%;height:auto;aspect-ratio:1;object-fit:contain}
 .brand-card figcaption{text-align:center}
-.stack-inner{flex-wrap:wrap;justify-content:flex-start;gap:18px 30px}
-.stack-inner .stack-label{margin-right:auto}
-.learning-strip{background:var(--soft);border-bottom:1px solid var(--line)}
-.learning-inner{display:flex;align-items:center;gap:24px;padding-block:18px}
-.learning-label{font-size:11px;font-weight:600;letter-spacing:.1em;color:var(--muted);flex-shrink:0}
-.learning-inner ul{list-style:none;margin:0;padding:0;display:flex;gap:10px;flex-wrap:wrap}
-.learning-inner li{font-size:12px;color:var(--accent);border:1px solid var(--line);background:var(--bg);border-radius:999px;padding:5px 12px;line-height:1.5}
 .certificate{transition:background-color .2s ease,padding-inline .2s ease;border-radius:4px}
 .cert-year{font-variant-numeric:tabular-nums}
 .hero-copy{animation:soft-enter .6s ease both}
@@ -61,9 +54,6 @@
   .certificate:hover{background:var(--soft);padding-inline:12px}
 }
 @media(max-width:760px){
-  .stack-inner{gap:14px 22px}
-  .stack-inner .stack-label{flex-basis:100%}
-  .learning-inner{align-items:flex-start;flex-direction:column;gap:12px}
   .hero-actions{gap:12px}
   .button,.hero-actions>.text-link{font-size:12px;padding-inline:15px;gap:15px}
 }
@@ -76,4 +66,33 @@
 /* A deeper green keeps the knight legible against the light surface. */
 :root:not([data-theme=dark]) .brand-image img{
   filter:brightness(.55) saturate(.65) hue-rotate(-12deg)
+}
+
+/* Equal columns make practical experience and learning easy to compare. */
+.toolkit-overview{border-block:1px solid var(--line);background:var(--surface)}
+.toolkit-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}
+.toolkit-panel{min-width:0;padding:28px 32px 30px 0}
+.toolkit-panel+.toolkit-panel{border-left:1px solid var(--line);padding-left:32px;padding-right:0}
+.toolkit-panel h2{font-size:11px;line-height:1.7;font-weight:600;letter-spacing:.12em;color:var(--muted);margin-bottom:18px}
+.toolkit-tags{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:10px}
+.toolkit-tags li{font-size:13px;line-height:1.5;color:var(--text);border:1px solid var(--line);border-radius:6px;background:var(--bg);padding:7px 12px}
+.toolkit-learning .toolkit-tags li{color:var(--accent);background:var(--tint)}
+.certificate-disclosure{border-block:1px solid var(--line);margin-top:32px}
+.certificate-disclosure>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:19px 0;cursor:pointer;min-height:60px}
+.certificate-disclosure>summary::-webkit-details-marker{display:none}
+.certificate-disclosure>summary strong{display:block;font-size:18px;font-weight:500;letter-spacing:-.3px}
+.certificate-disclosure>summary small{display:block;font-size:10px;line-height:1.6;letter-spacing:.08em;color:var(--muted);margin-top:6px}
+.certificate-count{display:flex;align-items:center;gap:16px;color:var(--accent);font-size:13px}
+.certificate-disclosure[open] .details-plus{transform:rotate(45deg)}
+.certificate-disclosure>summary:hover strong{color:var(--accent)}
+.certificate-disclosure .certificate:last-child{border-bottom:0}
+#about.section{padding-block:75px}
+@media(max-width:760px){
+  .toolkit-grid{grid-template-columns:1fr}
+  .toolkit-panel{padding:23px 0}
+  .toolkit-panel+.toolkit-panel{padding:23px 0;border-left:0;border-top:1px solid var(--line)}
+  .toolkit-panel h2{margin-bottom:14px}
+  .toolkit-tags{gap:8px}
+  .toolkit-tags li{font-size:12px;padding:6px 10px}
+  #about.section{padding-block:55px}
 }
